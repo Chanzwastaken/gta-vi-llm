@@ -133,9 +133,7 @@ python src/data_cleaning.py
 python src/data_validation.py
 
 # Generate quality report
-python src/report_generator.py \
-  --input data/clean_comments_validated.csv \
-  --output data/data_quality_report.html
+python src/report_generator.py --input data/clean_comments_validated.csv --output data/data_quality_report.html
 
 # Open report in browser
 start data/data_quality_report.html
