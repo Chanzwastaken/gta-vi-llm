@@ -8,6 +8,8 @@
 
 A complete, production-quality portfolio project demonstrating end-to-end LLM dataset preparation and text classification using YouTube comments from the GTA VI Trailer 2.
 
+![streamlit-gta6llm](https://github.com/user-attachments/assets/698f926f-04f8-46cf-a69a-2af9afad3053)
+
 ---
 
 ## 📋 Table of Contents
