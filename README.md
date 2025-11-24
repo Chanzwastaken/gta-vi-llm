@@ -17,7 +17,7 @@ A complete, production-quality portfolio project demonstrating end-to-end LLM da
 
 ### Data Quality Dashboard
 ![Data Quality Report](data-quality-report.png)
-*Comprehensive quality metrics and visualizations - [View Full Report](data/demo_report.html)*
+*Comprehensive quality metrics and visualizations - [View Full Report](data_quality_report.html)*
 
 ---
 
