@@ -1,0 +1,101 @@
+# GTA VI LLM Dataset Project Configuration
+
+# Video Configuration
+video:
+  video_id: "QdBZY2fkU-0"  # GTA VI Trailer 2
+  title: "Grand Theft Auto VI Trailer 2"
+  
+# Data Collection
+collection:
+  max_comments: 50000
+  comments_per_request: 100
+  max_retries: 3
+  retry_delay: 5  # seconds
+  
+# Data Cleaning
+cleaning:
+  remove_html: true
+  remove_emojis: true
+  remove_urls: true
+  normalize_whitespace: true
+  min_length: 3
+  max_length: 1000
+  
+# Language Detection
+language:
+  target_language: "en"
+  confidence_threshold: 0.8
+  
+# Toxicity Detection
+toxicity:
+  model: "unitary/toxic-bert"
+  threshold_mild: 0.5
+  threshold_severe: 0.8
+  
+# Label Schema
+labels:
+  sentiment:
+    - Positive
+    - Neutral
+    - Negative
+    - Sarcasm
+    
+  toxicity:
+    - Safe
+    - Mild Toxic
+    - Severe Toxic
+    
+  emotion:
+    - Excited
+    - Angry
+    - Disappointed
+    - Nostalgic
+    - Humor/Meme
+    - Other
+    
+  relevance:
+    - On-topic
+    - Off-topic
+    - Spam
+    
+  intent:
+    - Reaction
+    - Speculation
+    - Criticism
+    - Complaint
+    - Meme/Joke
+    - Question
+
+# Model Training
+training:
+  model_name: "distilbert-base-uncased"
+  batch_size: 16
+  learning_rate: 2.0e-5
+  num_epochs: 3
+  warmup_steps: 500
+  weight_decay: 0.01
+  max_length: 128
+  
+  # Data split
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  
+  # Class imbalance
+  use_class_weights: true
+  oversample_minority: false
+  
+# Paths
+paths:
+  raw_data: "data/raw_comments.csv"
+  clean_data: "data/clean_comments.csv"
+  labeled_data: "data/labeled_comments.csv"
+  quality_report: "data/data_quality_report.html"
+  qa_report: "data/qa_report.html"
+  models: "models/saved_model"
+  
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/project.log"
